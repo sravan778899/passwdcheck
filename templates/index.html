@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hacker Password Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>&gt;_ Password Strength Analyzer</h2>
+        <form method="POST">
+            <input type="password" name="password" placeholder="Enter password" required>
+            <button type="submit">Check</button>
+        </form>
+
+        {% if strength %}
+    <div class="result" id="result">
+        <pre>Analyzing password...
+Strength: █████ {{ strength }}</pre>
+    </div>
+{% endif %}
+    </div>
+</body>
+</html>
